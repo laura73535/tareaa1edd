@@ -12,7 +12,7 @@ void inicializarLista(tListaCaracteres &lista, int capacidadInicial) {
 void insertarCaracter(tListaCaracteres &lista, int pos, char c) {
     // 1. Verificamos si necesitamos duplicar la capacidad
     if (lista.listSize == lista.maxSize) {
-        int nuevaCapacidad = lista.maxSize * 2; // Duplicamos el tamano[cite: 1]
+        int nuevaCapacidad = lista.maxSize * 2; // Duplicamos el tamano
         char* nuevoArreglo = new char[nuevaCapacidad];
         
         // Copiamos los datos al nuevo bloque de memoria
@@ -20,7 +20,7 @@ void insertarCaracter(tListaCaracteres &lista, int pos, char c) {
             nuevoArreglo[i] = lista.listArray[i];
         }
         
-        // Liberamos la memoria del arreglo viejo para evitar fugas (memory leaks)[cite: 1]
+        // Liberamos la memoria del arreglo viejo para evitar fugas (memory leaks)
         delete[] lista.listArray;
         
         // Actualizamos los punteros y la capacidad
