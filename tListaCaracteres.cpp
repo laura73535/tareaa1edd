@@ -1,15 +1,5 @@
 #include "tListaCaracteres.hpp"
 
-/*****
-* void inicializarLista
-******
-* Inicializa los atributos del arreglo dinamico y reserva la memoria inicial.
-******
-* Input:
-* tListaCaracteres &lista : Referencia a la lista a inicializar
-* int capacidadInicial    : Tamano inicial del arreglo
-* Returns: void
-*****/
 void inicializarLista(tListaCaracteres &lista, int capacidadInicial) {
     lista.maxSize = capacidadInicial;
     lista.listSize = 0;
@@ -19,18 +9,6 @@ void inicializarLista(tListaCaracteres &lista, int capacidadInicial) {
     lista.listArray = new char[lista.maxSize];
 }
 
-/*****
-* void insertarCaracter
-******
-* Inserta un caracter en una posicion especifica, desplazando los elementos.
-* Si el arreglo se llena, duplica su capacidad.
-******
-* Input:
-* tListaCaracteres &lista : Referencia a la lista
-* int pos                 : Posicion donde insertar
-* char c                  : Caracter a insertar
-* Returns: void
-*****/
 void insertarCaracter(tListaCaracteres &lista, int pos, char c) {
     // 1. Verificamos si necesitamos duplicar la capacidad
     if (lista.listSize == lista.maxSize) {
@@ -61,16 +39,6 @@ void insertarCaracter(tListaCaracteres &lista, int pos, char c) {
     lista.listSize++;
 }
 
-/*****
-* char borrarCaracter
-******
-* Elimina el caracter en la posicion dada y desplaza los elementos restantes.
-******
-* Input:
-* tListaCaracteres &lista : Referencia a la lista
-* int pos                 : Posicion a borrar
-* Returns: char, el caracter que fue eliminado
-*****/
 char borrarCaracter(tListaCaracteres &lista, int pos) {
     // Guardamos el caracter que vamos a borrar para retornarlo
     char caracterBorrado = lista.listArray[pos];
@@ -84,17 +52,6 @@ char borrarCaracter(tListaCaracteres &lista, int pos) {
     return caracterBorrado;
 }
 
-/*****
-* void concatenarTexto
-******
-* Agrega una cadena de texto al final de la lista actual.
-******
-* Input:
-* tListaCaracteres &lista : Referencia a la lista
-* const char* texto       : Arreglo de caracteres a concatenar
-* int len                 : Longitud del texto a concatenar
-* Returns: void
-*****/
 void concatenarTexto(tListaCaracteres &lista, const char* texto, int len) {
     // Aprovechamos la funcion que ya hicimos, insertando al final (listSize)
     for (int i = 0; i < len; i++) {
@@ -102,15 +59,6 @@ void concatenarTexto(tListaCaracteres &lista, const char* texto, int len) {
     }
 }
 
-/*****
-* void liberarLista
-******
-* Libera la memoria dinamica ocupada por el arreglo para evitar memory leaks.
-******
-* Input:
-* tListaCaracteres &lista : Referencia a la lista a limpiar
-* Returns: void
-*****/
 void liberarLista(tListaCaracteres &lista) {
     // Usamos delete[] porque reservamos un arreglo con new[]
     delete[] lista.listArray;
