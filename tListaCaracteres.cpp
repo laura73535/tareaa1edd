@@ -66,3 +66,6 @@ void liberarLista(tListaCaracteres &lista) {
     lista.listSize = 0;
     lista.maxSize = 0;
 }
+
+
+//hola
