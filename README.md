@@ -1,6 +1,6 @@
 Laura Orellana
 Fiorella Villa
-SO
+SO (linux)
 VERSION DE C++/compilador
 Como compilar
 Como correr
